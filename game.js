@@ -43,15 +43,29 @@ const gameLoop = () => {
   console.log('I have a number in mind')
   console.log('It\'s between 1 and 1000')
   console.log('You have 10 guesses')
-  let fooNum = (min, max) => {
-    min = 1
-    max = 1000
-    return Math.round(Math.random()*(max-min) + min)
+  fooNum ()
+  let guess = rls.question('Guess from 1 to 1000! \n')
+  if (guess === fooNum())
+  { console.log('Congrats! You got it right!')
+    gameLoop()
+  }
+   else if ((guess * 10) > fooNum()) {
+    console.log('Your guess is too high!')
+    while (guess !== fooNum()){
+      console.log(' lives to live! Use them well kitty kat')
+      guessLoop()
+    }//end of while
+
+  }//end of fooNum()
+   else {
+    console.log('Your guess is too low!')
+    
+  }
     //I'm not really sure what to do now.
     
   } 
 
-}
+
 
 
 /***
@@ -64,6 +78,16 @@ const generateRandomNumber = (min, max) => {
   max = 1000
   return Math.round(Math.random()*(max - min) + min)
 }
+ fooNum = (min, max) => {
+  min = 1
+  max = 1000
+  return Math.round(Math.random()*(max-min) + min)
+}
+function heartPt() {
+  let heart 
+  if ()
+}
+
 
 startGame()
 
